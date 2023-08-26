@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form onsubmit="register(event)">
+        <label>name</label><br>
+        <input type="text" id="name"><br>
+        <label>price</label><br>
+        <input type="text" id="price"><br>
+        <label>image</label><br>
+       <input type="file" id="image"><br>
+       <label>category</label><br>
+       <input type="text" id="category"><br>
+       <input type="submit" value="submit">
+    </form>
+    <button onclick="getusers()">Get users</button>
+
+
+
+
+    <script>
+   function register(event){
+    event.preventDefault();
+    var username = document.getElementById("name").value;
+    var userprice = document.getElementById("price").value;
+    var usercategory = document.getElementById("category").value;
+    var userimage=document.getElementById("image").value;
+      
+var userboject = {name:username,price:userprice,image:userimage,category:usercategory}
+var array = JSON.parse(localStorage.getItem("users2")) || [];
+array.push(userboject);
+localStorage.setItem("users",JSON.stringify(array));
+
+   }
+   function getusers(event){
+    // event.preventDefault()
+    var users = JSON.parse(localStorage.getItem("users"));
+            console.log(users)
+   }
+    </script>
+</body>
+</html>

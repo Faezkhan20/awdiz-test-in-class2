@@ -14,16 +14,17 @@ for(var i =0;i<array.length;i++){
 
 question number 3 
 
-var arr2 = [23 ,11 ,5 , 10 , 50 , 5 , 6, 23 , 3 , 33 , 1 ]
 
-function SmallNum(arr2){
-    var small = arr2[0] ;
-    for(var j = 0; j < arr2.length - 1; j++){
-        small = small < arr2[j+1] ? small : arr2[j+1];
+function sabsechota(array){
+    let sabsechota=array[0];
+    for(var i =1; i< array.length;i++){
+        if(array[i] < sabsechota){
     }
-    return small;
 }
-console.log(SmallNum(arr2)); 
+    return sabsechota
+    
+}
+console.log(sabsechota([100,222,333,444]))
 
 
 
